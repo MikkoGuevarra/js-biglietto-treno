@@ -14,11 +14,9 @@ console.log(prezzo_ticket + '€');
 
 //sconto del 20% per under 18
 var discount_under_18 = (prezzo_ticket * 20) / 100;
-console.log(discount_under_18);
 
 //sconto del 40% per over 65
 var discount_over_65 = (prezzo_ticket * 40) / 100;
-console.log(discount_over_65);
 
 //applicazione sconti
 
@@ -29,5 +27,11 @@ if (age >= 65) {
     var prezzo_finale = prezzo_ticket - discount_under_18;
     console.log('devi pagare' + prezzo_finale);
 } else {
-    console.log('devi pagare' + prezzo_ticket);
+    var prezzo_finale = prezzo_ticket;
+    console.log('devi pagare' + prezzo_finale + '€');
 }
+
+document.getElementById('passenger_age').innerHTML = age;
+document.getElementById('km-to-do').innerHTML = km;
+document.getElementById('normal-price').innerHTML = prezzo_ticket;
+document.getElementById('discounted-price').innerHTML = prezzo_finale;
