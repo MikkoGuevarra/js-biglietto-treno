@@ -19,3 +19,15 @@ console.log(discount_under_18);
 //sconto del 40% per over 65
 var discount_over_65 = (prezzo_ticket * 40) / 100;
 console.log(discount_over_65);
+
+//applicazione sconti
+
+if (age >= 65) {
+    var prezzo_finale = prezzo_ticket - discount_over_65;
+    console.log('devi pagare' + prezzo_finale);
+} else if (age < 18){
+    var prezzo_finale = prezzo_ticket - discount_under_18;
+    console.log('devi pagare' + prezzo_finale);
+} else {
+    console.log('devi pagare' + prezzo_ticket);
+}
