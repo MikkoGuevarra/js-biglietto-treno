@@ -1,10 +1,22 @@
 // chiedi quanti km deve percorrere
 var km = parseInt(prompt ('Inserisci quanti KM devi fare'));
 console.log(km + 'km da fare');
+if (!isNaN(km)) {
+    console.log('è un numero');
+} else {
+    console.log('non è un numero');
+    alert('Inserisci un numero');
+}
 
 //chiedi quanti anni ha
 var age = parseInt(prompt ('Inserisci la tua età'));
 console.log(age + ' anni ');
+if (!isNaN(age)) {
+    console.log('è un numero');
+} else {
+    console.log('non è un numero');
+    alert('Inserisci un numero')
+}
 
 var prezzo_per_km = 0.21;
 
