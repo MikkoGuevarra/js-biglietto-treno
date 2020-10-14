@@ -1,22 +1,10 @@
 // chiedi quanti km deve percorrere
 var km = parseInt(prompt ('Inserisci quanti KM devi fare'));
 console.log(km + 'km da fare');
-if (!isNaN(km)) {
-    console.log('è un numero');
-} else {
-    console.log('non è un numero');
-    alert('Inserisci un numero');
-}
 
 //chiedi quanti anni ha
 var age = parseInt(prompt ('Inserisci la tua età'));
 console.log(age + ' anni ');
-if (!isNaN(age)) {
-    console.log('è un numero');
-} else {
-    console.log('non è un numero');
-    alert('Inserisci un numero')
-}
 
 var prezzo_per_km = 0.21;
 
@@ -32,19 +20,25 @@ var discount_over_65 = (prezzo_ticket * 40) / 100;
 
 //applicazione sconti
 
-if (age >= 65) {
-    var prezzo_finale = prezzo_ticket - discount_over_65;
-    console.log('devi pagare ' + prezzo_finale + '€');
-    document.getElementById('final-price').innerHTML = prezzo_finale;
-} else if (age < 18){
-    var prezzo_finale = prezzo_ticket - discount_under_18;
-    console.log('devi pagare ' + prezzo_finale + '€');
-    document.getElementById('final-price').innerHTML = prezzo_finale;
-} else {
-    var prezzo_finale = prezzo_ticket;
-    console.log('devi pagare ' + prezzo_finale + '€');
-    document.getElementById('final-price').innerHTML = prezzo_finale;
-}
+if (!isNaN(age) && (!isNaN(km))) {
+    console.log('è un numero');
+    if (age >= 65) {
+        var prezzo_finale = prezzo_ticket - discount_over_65;
+        console.log('devi pagare ' + prezzo_finale + '€');
+        document.getElementById('final-price').innerHTML = prezzo_finale.toFixed(2);
+    } else if (age < 18){
+        var prezzo_finale = prezzo_ticket - discount_under_18;
+        console.log('devi pagare ' + prezzo_finale + '€');
+        document.getElementById('final-price').innerHTML = prezzo_finale.toFixed(2);
+    } else {
+        var prezzo_finale = prezzo_ticket;
+        console.log('devi pagare ' + prezzo_finale + '€');
+        document.getElementById('final-price').innerHTML = prezzo_finale.toFixed(2);
+    }
 
-document.getElementById('passenger_age').innerHTML = age;
-document.getElementById('km-to-do').innerHTML = km;
+    document.getElementById('passenger_age').innerHTML = age;
+    document.getElementById('km-to-do').innerHTML = km;
+} else {
+    console.log('non è un numero');
+    alert('Inserisci un numero')
+}
